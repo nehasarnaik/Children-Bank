@@ -11,6 +11,8 @@ import { AdminUsersComponent } from './pages/admin/admin-users/admin-users.compo
 import { AdminDepositComponent } from './pages/admin/admin-deposit/admin-deposit.component';
 import { AdminWithdrawComponent } from './pages/admin/admin-withdraw/admin-withdraw.component';
 import { AdminTransactionsComponent } from './pages/admin/admin-transactions/admin-transactions.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AdminTransactionsComponent } from './pages/admin/admin-transactions/adm
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    MatPaginatorModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
