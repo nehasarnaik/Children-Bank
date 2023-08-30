@@ -1,49 +1,47 @@
-<table mat-table [dataSource] = "users" class = "mat-elevation-z8"> 
+<div>
+<table mat-table [dataSource] = "dataSource"> 
   <ng-container matColumnDef = "accountnumber">
-    <th mat-header-cell *matHeaderCellDef> Account Number</th>
-    <td mat-cell *matCellDef = "let user"> {{user.accountnumber}} </td>
+    <th mat-header-cell *matHeaderCellDef class="brand-logo"> Account Number</th>
+    <td mat-cell *matCellDef = "let user" class="table-content"> {{user.accountnumber}} </td>
  </ng-container>
-  <ng-container matColumnDef = "firstname">
-     <th mat-header-cell *matHeaderCellDef> First Name</th>
-     <td mat-cell *matCellDef = "let user"> {{user.firstname}} </td>
+  <ng-container matColumnDef = "name">
+     <th mat-header-cell *matHeaderCellDef class="brand-logo"> Name</th>
+     <td mat-cell *matCellDef = "let user" class="table-content"> {{user.firstname}} {{user.lastname}} </td>
   </ng-container>
-  <ng-container matColumnDef = "middlename">
-    <th mat-header-cell *matHeaderCellDef> Middle Name</th>
-    <td mat-cell *matCellDef = "let user"> {{user.middlename}} </td>
- </ng-container>
- <ng-container matColumnDef = "lastname">
-  <th mat-header-cell *matHeaderCellDef> Last Name</th>
-  <td mat-cell *matCellDef = "let user"> {{user.lastname}} </td>
-</ng-container>
 <ng-container matColumnDef = "fathername">
-  <th mat-header-cell *matHeaderCellDef> Father's Name</th>
-  <td mat-cell *matCellDef = "let user"> {{user.fathername}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Father's Name</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.fathername}} </td>
 </ng-container>
 <ng-container matColumnDef = "mothername">
-  <th mat-header-cell *matHeaderCellDef> Mother's Name</th>
-  <td mat-cell *matCellDef = "let user"> {{user.mothername}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Mother's Name</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.mothername}} </td>
 </ng-container>
 <ng-container matColumnDef = "parentnumber">
-  <th mat-header-cell *matHeaderCellDef> Parent's Phone Number</th>
-  <td mat-cell *matCellDef = "let user"> {{user.parentnumber}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Parent's Mobile Number</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.parentnumber}} </td>
 </ng-container>
 <ng-container matColumnDef = "parentemailid">
-  <th mat-header-cell *matHeaderCellDef> Parent's Email-Id</th>
-  <td mat-cell *matCellDef = "let user"> {{user.parentemailid}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Parent's Email-Id</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.parentemailid}} </td>
 </ng-container>
 <ng-container matColumnDef = "adharcardnumber">
-  <th mat-header-cell *matHeaderCellDef> Adharcard Number</th>
-  <td mat-cell *matCellDef = "let user"> {{user.adharcardnumber}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Aadhar</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.adharcardnumber}} </td>
 </ng-container>
 <ng-container matColumnDef = "dateofbirth">
-  <th mat-header-cell *matHeaderCellDef> Date of Birth</th>
-  <td mat-cell *matCellDef = "let user"> {{user.dateofbirth}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> DOB</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.dateofbirth}} </td>
 </ng-container>
 <ng-container matColumnDef = "address">
-  <th mat-header-cell *matHeaderCellDef> Address</th>
-  <td mat-cell *matCellDef = "let user"> {{user.address}} </td>
+  <th mat-header-cell *matHeaderCellDef class="brand-logo"> Address</th>
+  <td mat-cell *matCellDef = "let user" class="table-content"> {{user.address}} </td>
 </ng-container>
+<ng-container matColumnDef = "branchcode">
+    <th mat-header-cell *matHeaderCellDef class="brand-logo"> Branch Code</th>
+    <td mat-cell *matCellDef = "let user" class="table-content"> {{user.branchcode}} </td>
+  </ng-container>
   <tr mat-header-row *matHeaderRowDef = "displayedColumns"></tr>
   <tr mat-row *matRowDef = "let row; columns: displayedColumns;"></tr>
 </table> 
-<mat-paginator #paginator [pageSizeOptions]="[30, 60, 90]" showFirstLastButtons></mat-paginator>
+<mat-paginator #paginator [length]="users.length" [pageSize]="10" [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons> </mat-paginator>
+</div>
