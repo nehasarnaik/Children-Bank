@@ -13,6 +13,8 @@ import { AdminWithdrawComponent } from './pages/admin/admin-withdraw/admin-withd
 import { AdminTransactionsComponent } from './pages/admin/admin-transactions/admin-transactions.component';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserModule,
     AppRoutingModule,
     MatTableModule,
-    MatPaginatorModule 
+    MatPaginatorModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

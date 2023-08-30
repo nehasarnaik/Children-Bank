@@ -10,4 +10,5 @@ export class User{
     adharcardnumber!: string;
     dateofbirth!: string;
     address!: string;
+    branchcode!: string;
 }
